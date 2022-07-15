@@ -9,5 +9,6 @@ export const publickRoute = [
     {path:'/addservice', name:AddService, Component: AddService},
     {path:'/about', name:About, Component:About },
     {path:'/dashboard', name:Dashboard, Component:Dashboard },
+    {path:'/addservice', name:AddService, Component:AddService },
     {path:'/gps', name:Gps, Component:Gps }
 ]

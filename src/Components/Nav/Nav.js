@@ -19,6 +19,11 @@ const Nav = () => {
             </NavLink>
         </li>       
         <li>
+            <NavLink to='/addservice' >
+                Add Service
+            </NavLink>
+        </li>
+        <li>
             <NavLink to='/gps' >
                 Gps
             </NavLink>
