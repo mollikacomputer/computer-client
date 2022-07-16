@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useServices from '../../Hooks/useService';
 import Service from '../Service/Service';
 
 const Home = () => {
     // get data from mongodb and display to UI
-    const [services, setServices] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/service`)
-        .then(res => res.json())
-        .then(data => setServices(data))
-    }, []); 
-    console.log(services);
+    const [services] = useServices([]);
     return (
         <div>
             

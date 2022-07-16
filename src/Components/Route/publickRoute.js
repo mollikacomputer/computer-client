@@ -12,3 +12,10 @@ export const publickRoute = [
     {path:'/addservice', name:AddService, Component:AddService },
     {path:'/gps', name:Gps, Component:Gps }
 ]
+
+// export const publickRoute = [
+//     {path: '/', name: Home, Component: Home},
+//     {path:'/', name:Home, Component:Home},
+//     {path: '/', name: Home, Component: Home},
+//     {path: '/', name: Home, Component: Home}
+// ]
