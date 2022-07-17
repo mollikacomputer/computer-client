@@ -2,7 +2,7 @@ import React from "react";
 import useServices from "../../Hooks/useService";
 
 const AddService = () => {
-  const [services] = useServices();
+  const [services, setServices] = useServices();
   // console.log(services);
   const handleAddService = (event) => {
 
@@ -28,6 +28,26 @@ const AddService = () => {
 
   };
 
+  const handleDeleteService = id =>{
+
+    const proceed = window.confirm('are you sure you want to delete?');
+    if(proceed){
+      console.log('deleting', id);
+      const url = `http://localhost:5000/service/${id}`;
+      // const url = `http://localhost:5000/service/${id}`;
+      fetch(url, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.deletedCount > 0 ){
+          console.log(data);
+          const remaining = services.filter(service => service._id !== id);
+          setServices(remaining);
+        }
+      })
+    }
+  }
   return (
     <div>
       <br />
@@ -63,7 +83,7 @@ const AddService = () => {
         <ul>
         {
            services.map( service =><li>
-            {service.name} <button> X </button> 
+            {service.name} <button onClick={()=>handleDeleteService(service._id)} > X </button> 
             </li> )
 
         }
