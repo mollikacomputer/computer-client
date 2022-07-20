@@ -4,6 +4,7 @@ import useServices from "../../Hooks/useService";
 const AddService = () => {
   const [services, setServices] = useServices();
   // console.log(services);
+  
   const handleAddService = (event) => {
 
     event.preventDefault();
@@ -12,6 +13,7 @@ const AddService = () => {
     const pic = event.target.pic.value;
     const service = { name, description, pic };
     console.log(service);
+    
     // sent data to server
     fetch('http://localhost:5000/service', {
         method: 'POST',
@@ -84,6 +86,7 @@ const AddService = () => {
         {
            services.map( service =><li>
             {service.name} <button onClick={()=>handleDeleteService(service._id)} > X </button> 
+            
             </li> )
 
         }
@@ -94,49 +97,3 @@ const AddService = () => {
 };
 
 export default AddService;
-/* 
-
-const handleAddService = e => {
-  e.preventDefault();
-  const name = e.target.name.value;
-  const description = e.target.description.value;
-  const pic = e.target.pic.value;
-  const newService = {name, description, pic};
-
-  console.log(newService);
-
-  fetch('http://localhost:5000/service', {
-    method: 'POST',
-    headers:{
-        'Content-type': 'application/json'
-    },
-    body: JSON.stringify(service)
-})
-
-fetch('http://localhost:5000/service', {
-  method:'POST',
-  headers:{
-    'Content-type': 'application/json'
-  }
-  body: JSON.stringify(service)
-})
-
-fetch('http://localhost:5000/service',{
-  method: 'POST',
-  headers:{
-    'Content-type': 'application/json'
-  }
-  body: JSON.stringify(service);
-})
-
-fetch('http://localhost:5000/service',{
-  method: "POST",
-  headers:{
-    'Content-type': 'application/json'
-  },
-  body:JSON.stringify(service);
-})
-
-}
-
- */
