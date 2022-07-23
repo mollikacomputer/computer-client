@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {Link } from "react-router-dom";
 import useServices from "../../Hooks/useService";
 
 const AddService = () => {
   const [services, setServices] = useServices();
   // console.log(services);
-  
+  // start update
+
+  // end update service
   const handleAddService = (event) => {
 
     event.preventDefault();
@@ -84,8 +87,14 @@ const AddService = () => {
       Total Service {services.length}
         <ul>
         {
-           services.map( service =><li>
-            {service.name} <button onClick={()=>handleDeleteService(service._id)} > X </button> 
+           services.map( service =><li
+           key={service.id}
+           >
+            
+            {service.name} 
+            <button className="btn btn-outline" onClick={()=>handleDeleteService(service._id)} > X </button> 
+          
+            <Link to={`/updateservice/${service._id}`} > <button className="btn btn-outline" >Update</button> </Link>
             
             </li> )
 

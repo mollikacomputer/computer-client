@@ -23,6 +23,11 @@ const Nav = () => {
                 Add Service
             </NavLink>
         </li>
+        {/* <li>
+            <NavLink to='/updateservice' >
+                Update Service
+            </NavLink>
+        </li> */}
         <li>
             <NavLink to='/gps' >
                 Gps
