@@ -47,19 +47,20 @@ const UpdateService = () => {
         <input
           type="text"
           name="name"
-          placeholder="name"
+          placeholder={updateService.name}
+          // value={updateService.name}
           className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
           name="description"
-          placeholder="description"
+          placeholder={updateService.description}
           className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
           name="pic"
-          placeholder="pic"
+          placeholder={updateService.pic}
           className="input input-bordered w-full max-w-xs"
         />
         <input type="submit" value="Update service" className="btn" />
