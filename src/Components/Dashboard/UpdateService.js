@@ -15,7 +15,6 @@ const UpdateService = () => {
   }, []);
 
   const handleUpdateService = (event) => {
-
     event.preventDefault();
     const name = event.target.name.value;
     const description = event.target.description.value;
@@ -40,27 +39,29 @@ const UpdateService = () => {
 
   };
 
+  
   return (
     <div>
       <h2 className='text-5xl' > Update Service : {updateService.name} </h2>
       <form onSubmit={handleUpdateService}>
         <input
+          
           type="text"
           name="name"
-          placeholder={updateService.name}
+          value={updateService.name}
           // value={updateService.name}
           className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
           name="description"
-          placeholder={updateService.description}
+          value={updateService.description}
           className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
           name="pic"
-          placeholder={updateService.pic}
+          value={updateService.pic}
           className="input input-bordered w-full max-w-xs"
         />
         <input type="submit" value="Update service" className="btn" />
