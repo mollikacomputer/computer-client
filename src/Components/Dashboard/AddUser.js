@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import {useQuery} from 'react-query';
+import Loading from '../Loading';
 
 const AddUser = () => {
-    const [users, setUsers] = useState();
+  /*  
+  const {data: users, isLoading} = useQuery('users', () => fetch('http://localhost:5000/user').then(res => res.json()))
+    if(isLoading){
+      return <Loading></Loading>
+    }
+*/
+
+  const [users, setUsers] = useState([]);
         // get users data from mongodb server
         useEffect(()=>{
             fetch( 'http://localhost:5000/user')
             .then( res => res.json())
             .then( data => setUsers(data))
         },[]);
+
     const handleAddUser = event =>{
         event.preventDefault();
         const userName = event.target.userName.value;
@@ -36,13 +46,15 @@ const AddUser = () => {
         <div>
             <h2 className='text-3xl' > Add New User</h2>
             <h2 className='text-3xl' > Total User : {users?.length} </h2>
+           
             {
              users?.map( user => <li
-             key={user?.id}
+             key={user?._id}
              >
               {user?.userName}
              </li>)
             } 
+
         <br />
         <form onSubmit={handleAddUser}>
   

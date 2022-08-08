@@ -33,6 +33,11 @@ const Nav = () => {
                 Gps
             </NavLink>
         </li>
+        <li>
+            <NavLink to='/user' >
+                User
+            </NavLink>
+        </li>
     </>
   return (
     <div className="navbar bg-base-100">
