@@ -5,7 +5,7 @@ import Nav from './Components/Nav/Nav';
 function App() {
   console.log("Hello World");
   return (
-    <div className="App">
+    <div>
       <Nav/>
       <Routes>
         {
